@@ -13,11 +13,13 @@
 		<AssemblyName>NAudio.WaveFormRenderer</AssemblyName>
 		<GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<LangVersion>8.0</LangVersion>
+		<LangVersion>9</LangVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="NAudio.Core" Version="2.0.0" />
 		<PackageReference Include="SkiaSharp" Version="2.88.1" />
+		<PackageReference Include="System.Memory" Version="4.5.4" />
+		<PackageReference Include="NAudio" Version="2.0.0" />
 	</ItemGroup>
 </Project>
