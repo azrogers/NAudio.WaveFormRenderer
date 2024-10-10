@@ -17,9 +17,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="NAudio.Core" Version="2.0.0" />
-		<PackageReference Include="SkiaSharp" Version="2.88.1" />
-		<PackageReference Include="System.Memory" Version="4.5.4" />
-		<PackageReference Include="NAudio" Version="2.0.0" />
+		<PackageReference Include="CSCore" Version="1.2.1.2" />
+		<PackageReference Include="SkiaSharp" Version="2.88.8" />
+		<PackageReference Include="System.Memory" Version="4.5.5" />
 	</ItemGroup>
 </Project>

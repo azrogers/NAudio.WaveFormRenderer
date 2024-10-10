@@ -1,5 +1,5 @@
-﻿using System;
-using NAudio.Wave;
+﻿using CSCore;
+using System;
 
 namespace NAudio.WaveFormRenderer
 {
@@ -14,7 +14,7 @@ namespace NAudio.WaveFormRenderer
             this.dynamicRange = dynamicRange;
         }
 
-        public void Init(ISampleProvider reader, int samplesPerPixel)
+        public void Init(ISampleSource reader, int samplesPerPixel)
         {
             throw new NotImplementedException();
         }

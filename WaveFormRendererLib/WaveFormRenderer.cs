@@ -1,4 +1,4 @@
-﻿using NAudio.Wave;
+﻿using CSCore;
 using SkiaSharp;
 using System;
 
@@ -6,19 +6,19 @@ namespace NAudio.WaveFormRenderer
 {
     public class WaveFormRenderer
     {
-        public SKBitmap Render(WaveStream waveStream, WaveFormRendererSettings settings)
+        public SKBitmap Render(IWaveSource waveStream, WaveFormRendererSettings settings)
         {
             return Render(waveStream, new MaxPeakProvider(), settings);
         }
 
-        public SKBitmap Render(WaveStream waveStream, IPeakProvider peakProvider, WaveFormRendererSettings settings)
+        public SKBitmap Render(IWaveSource waveStream, IPeakProvider peakProvider, WaveFormRendererSettings settings)
         {
             int bytesPerSample = (waveStream.WaveFormat.BitsPerSample / 8);
             var samples = waveStream.Length / (bytesPerSample);
             var samplesPerPixel = (int)(samples / settings.Width);
             var stepSize = settings.PixelsPerPeak + settings.SpacerPixels;
             //using samplesPerPixel * stepSize only  may throw an Exception when rendering from .wav files (due to incorrect block length)
-            peakProvider.Init(waveStream.ToSampleProvider(), samplesPerPixel * stepSize - samplesPerPixel * stepSize % waveStream.WaveFormat.BlockAlign);
+            peakProvider.Init(waveStream.ToSampleSource(), samplesPerPixel * stepSize - samplesPerPixel * stepSize % waveStream.WaveFormat.BlockAlign);
             return Render(peakProvider, settings);
         }
 

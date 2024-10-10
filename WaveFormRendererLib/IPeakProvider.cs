@@ -1,10 +1,10 @@
-﻿using NAudio.Wave;
+﻿using CSCore;
 
 namespace NAudio.WaveFormRenderer
 {
     public interface IPeakProvider
     {
-        void Init(ISampleProvider reader, int samplesPerPixel);
+        void Init(ISampleSource reader, int samplesPerPixel);
         PeakInfo GetNextPeak();
     }
 }
